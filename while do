@@ -1,0 +1,21 @@
+Delimiter /
+Create procedure get_name()
+Begin
+Declare a int;
+Declare strng varchar(200);
+Declare name varchar(200);
+
+set a = 1;
+set strng = '';
+set name='';
+While (a <=5) do
+select stu_first_name into name from student where stu_id = a ;
+	set strng = concat(strng,name,',');
+	set a =a+1;
+End While;
+
+Select strng;
+End /
+
+Delimiter ; 
+
